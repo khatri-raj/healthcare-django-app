@@ -52,7 +52,22 @@ Visit: http://127.0.0.1:8000
 
 📸 Screenshots
 ### 🔐 Home Page
-![Login Page](screenshots/Home_Page.png)
+![Home Page](screenshots/Home_Page.png)
+
+### 🔐 Login Page
+![Login Page](screenshots/Login_Page.png)
+
+### 🔐 Signup Page
+![Signup Page](screenshots/Signup_Page.png)
+
+### 🔐 Patient Dashboard
+![Patient Dashboard](screenshots/Patient_Dashboard.png)
+
+### 🔐 Doctor Dashboard
+![Doctor Dashboard](screenshots/Doctor_Dashboard.png)
+
+### 🔐 Django Administrasion
+![Django Administration](screenshots/Administration.png)
 
 👨‍💻 Author
 Raj Khatri– GitHub
