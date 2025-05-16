@@ -1,105 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Healthcare App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(135deg, #e6f0fa 0%, #f0f2f5 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-        }
-        .navbar {
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .navbar-brand {
-            font-weight: bold;
-            color: #007bff !important;
-            font-size: 1.5rem;
-        }
-        .container-main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .welcome-card {
-            max-width: 600px;
-            width: 100%;
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            background-color: #ffffff;
-        }
-        .card-body {
-            padding: 2.5rem;
-        }
-        .card-title {
-            color: #1a3c6d;
-            font-weight: 600;
-        }
-        .card-text {
-            color: #555;
-            font-size: 1.1rem;
-        }
-        .btn-custom {
-            padding: 12px 24px;
-            font-size: 1.1rem;
-            border-radius: 8px;
-            transition: transform 0.2s;
-        }
-        .btn-custom:hover {
-            transform: translateY(-2px);
-        }
-        footer {
-            background-color: #f8f9fa;
-            padding: 15px 0;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Healthcare App</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav ms-auto">
-                    {% if user.is_authenticated %}
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                    {% else %}
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                        <a class="nav-link" href="{% url 'signup' %}">Signup</a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="container-main">
-        <div class="card welcome-card">
-            <div class="card-body text-center">
-                <h2 class="card-title mb-4">Welcome to Healthcare App</h2>
-                <p class="card-text mb-5">Discover personalized healthcare services tailored for you. Log in to manage your health or sign up to join our platform today.</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="{% url 'login' %}" class="btn btn-primary btn-custom">Login</a>
-                    <a href="{% url 'signup' %}" class="btn btn-success btn-custom">Signup</a>
-                </div>
+{% extends "base.html" %}
+
+{% block title %}Home - Healthcare App{% endblock %}
+
+{% block content %}
+<div class="container-main">
+    <div class="card welcome-card mx-auto" style="max-width: 600px; border:none; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); background-color:#fff;">
+        <div class="card-body text-center" style="padding: 2.5rem;">
+            <h2 class="card-title mb-4" style="color:#1a3c6d; font-weight:600;">Welcome to Healthcare App</h2>
+            <p class="card-text mb-5" style="color:#555; font-size:1.1rem;">
+                Find healthcare services just for you. Log in to manage your health or sign up to get started.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="{% url 'login' %}" class="btn btn-primary btn-custom" style="padding:12px 24px; font-size:1.1rem; border-radius:8px; transition:transform 0.2s;">
+                    Login
+                </a>
+                <a href="{% url 'signup' %}" class="btn btn-success btn-custom" style="padding:12px 24px; font-size:1.1rem; border-radius:8px; transition:transform 0.2s;">
+                    Signup
+                </a>
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container">
-            <p class="text-muted mb-0">© 2025 Healthcare App. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+</div>
+{% endblock %}
